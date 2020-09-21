@@ -1,0 +1,124 @@
+﻿@model Tankop.Models.TankCountryView
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-controller="Tanks" asp-action="Index" method="get">
+    <p>
+
+        <select asp-for="TankCountry" asp-items="Model.Country">
+            <option value="">All</option>
+        </select>
+
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Tier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].TankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].HitPoints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].ROF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].AimTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Accuracy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].AvgPenetration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].AvgDamage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].Dpm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].HullArmor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].TurretArmor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].ImgSrc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tanks) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TankName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HitPoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AimTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvgPenetration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvgDamage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dpm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HullArmor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurretArmor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImgSrc)
+            </td>
+            <td>
+               
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
