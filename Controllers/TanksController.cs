@@ -21,35 +21,68 @@ namespace Tankop.Controllers
 
         // GET: Tanks
 
-        // GET: Movies
-        public async Task<IActionResult> Index(string tankCountry, string searchString)
+        
+        public async Task<IActionResult> Index(string tankCountry, string tankClass, int tankTier, string searchString)
         {
-            // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Tanks
+            // Use LINQ to get list of countries.
+            IQueryable<string> countryQuery = from m in _context.Tanks
                                             orderby m.Country
                                             select m.Country;
+            // Use LINQ to get list of classes
+            IQueryable<string> classQuery = from c in _context.Tanks
+                                            orderby c.Class
+                                            select c.Class;
+            //Use LINQ to get list of tiers
+            IQueryable<int> tierQuery = from t in _context.Tanks
+                                        orderby t.Tier
+                                        select t.Tier;
 
-            var movies = from m in _context.Tanks
+            var tank = from m in _context.Tanks
                          select m;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.TankName.Contains(searchString));
+                tank = tank.Where(s => s.TankName.Contains(searchString));
             }
 
             if (!string.IsNullOrEmpty(tankCountry))
             {
-                movies = movies.Where(x => x.Country == tankCountry);
+                tank = tank.Where(x => x.Country == tankCountry);
             }
+            if (!string.IsNullOrEmpty(tankClass))
+            {
+                tank = tank.Where(x => x.Class == tankClass);
+            }
+
+            if (!string.IsNullOrEmpty(tankTier.ToString()))
+            {
+                tank = tank.Where(x => x.Tier == tankTier);
+            }
+
 
             var tankCountryVM = new TankCountryView
             {
-                Country = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Tanks = await movies.ToListAsync()
-            };
+                Country = new SelectList(await countryQuery.Distinct().ToListAsync()),
+               Tanks = await tank.ToListAsync(),         
+               
+               Class = new SelectList(await classQuery.Distinct().ToListAsync()),
 
+               Tier = new SelectList(await tierQuery.Distinct().ToListAsync()),
+
+            };
             return View(tankCountryVM);
+
+           // var tankClassVM = new TankClassView
+           // {  
+           //     
+           //     Class = new SelectList(await classQuery.Distinct().ToListAsync()),
+           //     Tanks = await tank.ToListAsync(),
+           //     // Tier = new SelectList(await tierQuery.Distinct().ToListAsync()),
+           //
+           // };
+           // return View(tankClassVM);
         }
+
 
         //  public async Task<IActionResult> Index(string searchString)
         //  {

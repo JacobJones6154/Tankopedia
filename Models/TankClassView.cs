@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Tankop.Models
 {
-    public class TankCountryView
+    public class TankClassView
     {
         public List<Tanks> Tanks { get; set; }
         public SelectList Class { get; set; }
@@ -16,11 +16,5 @@ namespace Tankop.Models
         public string TankClass { get; set; }
         public string TankTier { get; set; }
         public string SearchString { get; set; }
-   
-        
-        
     }
-   
-
-    
 }

@@ -1,11 +1,21 @@
 ﻿@model Tankop.Models.TankCountryView
 
+
+
+
+
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
 
-<h1>Index</h1>
 
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -13,11 +23,17 @@
     <p>
 
         <select asp-for="TankCountry" asp-items="Model.Country">
-            <option value="">All</option>
+            <option value="">All Countries</option>
+        </select>
+        <select asp-for="TankClass" asp-items="Model.Class">
+            <option value="">All Classes</option>
+        </select>
+        <select asp-for="TankTier" asp-items="Model.Tier">
+            <option value="">All Tiers</option>
         </select>
 
-        Title: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+        Tank Name: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
     </p>
 </form>
 <table class="table">
@@ -69,56 +85,57 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Tanks) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Class)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tier)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TankName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HitPoints)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ROF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AimTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Accuracy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgPenetration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvgDamage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dpm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HullArmor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TurretArmor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImgSrc)
-            </td>
-            <td>
-               
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Tanks)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tier)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TankName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HitPoints)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ROF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AimTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Accuracy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgPenetration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgDamage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dpm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HullArmor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TurretArmor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgSrc)
+                </td>
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
