@@ -54,23 +54,25 @@ namespace Tankop.Controllers
                 tank = tank.Where(x => x.Class == tankClass);
             }
 
-            if (!string.IsNullOrEmpty(tankTier.ToString()))
-            {
-                tank = tank.Where(x => x.Tier == tankTier);
-            }
+          // if (!string.IsNullOrEmpty(tankTier.ToString()))
+          // {
+          //     tank = tank.Where(x => x.Tier == tankTier);
+          // }
 
 
             var tankCountryVM = new TankCountryView
             {
-                Country = new SelectList(await countryQuery.Distinct().ToListAsync()),
-               Tanks = await tank.ToListAsync(),         
-               
+               Country = new SelectList(await countryQuery.Distinct().ToListAsync()),
+                
                Class = new SelectList(await classQuery.Distinct().ToListAsync()),
 
-               Tier = new SelectList(await tierQuery.Distinct().ToListAsync()),
+              // Tier = new SelectList(await tierQuery.Distinct().ToListAsync()),
+
+               Tanks = await tank.ToListAsync(), 
 
             };
             return View(tankCountryVM);
+
 
            // var tankClassVM = new TankClassView
            // {  
@@ -83,7 +85,7 @@ namespace Tankop.Controllers
            // return View(tankClassVM);
         }
 
-
+        // Search String
         //  public async Task<IActionResult> Index(string searchString)
         //  {
         //      var tanks = from m in _context.Tanks

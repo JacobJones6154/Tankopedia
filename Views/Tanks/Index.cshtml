@@ -28,9 +28,9 @@
         <select asp-for="TankClass" asp-items="Model.Class">
             <option value="">All Classes</option>
         </select>
-        <select asp-for="TankTier" asp-items="Model.Tier">
+        @*<select asp-for="TankTier" asp-items="Model.Tier">
             <option value="">All Tiers</option>
-        </select>
+        </select>*@
 
         Tank Name: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Search" />
