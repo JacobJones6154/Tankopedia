@@ -72,34 +72,7 @@ namespace Tankop.Controllers
 
             };
             return View(tankCountryVM);
-
-
-           // var tankClassVM = new TankClassView
-           // {  
-           //     
-           //     Class = new SelectList(await classQuery.Distinct().ToListAsync()),
-           //     Tanks = await tank.ToListAsync(),
-           //     // Tier = new SelectList(await tierQuery.Distinct().ToListAsync()),
-           //
-           // };
-           // return View(tankClassVM);
         }
-
-        // Search String
-        //  public async Task<IActionResult> Index(string searchString)
-        //  {
-        //      var tanks = from m in _context.Tanks
-        //                   select m;
-        //
-        //      if (!String.IsNullOrEmpty(searchString))
-        //      {
-        //          tanks = tanks.Where(s => s.TankName.Contains(sea));
-        //      }
-        //
-        //      return View(await tanks.ToListAsync());
-        //  }
-
-
 
         // GET: Tanks/Details/5
         public async Task<IActionResult> Details(int? id)
