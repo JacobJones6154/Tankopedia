@@ -8,7 +8,7 @@
 
 **DATABASE DIAGRAM**
 
-![DBDiagram](https://github.com/JacobJones6154/WOTCONSOLEPROJECT/blob/master/Assets/Database%20Diagram.PNG)
+![DBDiagram](https://github.com/JacobJones6154/WOTCONSOLEPROJECT/blob/master/Assets/db.PNG)
 
 ***
 ***
@@ -18,7 +18,8 @@
 
 screenshot of SSMS showing data stored in tables
 
-![]()
+![dbdata](https://github.com/JacobJones6154/WOTCONSOLEPROJECT/blob/master/Assets/ssmsdata.PNG)
+
 screenshot of application view showing data retrieved from the database and displayed on the page
 
 ![]()
