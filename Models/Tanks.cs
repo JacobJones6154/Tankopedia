@@ -7,6 +7,7 @@ namespace Tankop.Models
 {
     public class Tanks
     { 
+
         public int Id { get; set; }
         public string Country { get; set; }
         public string Class { get; set; }
