@@ -29,7 +29,9 @@
             <option value="">All Classes</option>
         </select>
 
-        @* Need to fix this query item. 
+        
+
+        @* Need to fix this query item.
         <select asp-for="TankTier" asp-items="Model.Tier">
             <option value="">All Tiers</option>
         </select>*@
@@ -135,7 +137,8 @@
                 <td>
 
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
                 </td>
             </tr>
         }

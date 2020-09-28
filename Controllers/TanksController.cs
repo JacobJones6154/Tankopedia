@@ -92,6 +92,24 @@ namespace Tankop.Controllers
             return View(tanks);
         }
 
+        // GET : Tanks/Details to compare
+        public async Task<IActionResult> Compare(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tanks = await _context.Tanks
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (tanks == null)
+            {
+                return NotFound();
+            }
+
+            return View(tanks);
+        }
+
         // GET: Tanks/Create
         public IActionResult Create()
         {
