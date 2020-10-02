@@ -1,10 +1,10 @@
 ﻿@model Tankop.Models.Tanks
 
 @{
-    ViewData["Title"] = "Compare";
+    ViewData["Title"] = "Compare Tanks";
 }
 
-<h1>Compare</h1>
+<h1>Compare Tanks</h1>
 
 <div>
     <h4>Tanks</h4>
@@ -96,7 +96,11 @@
         </dd>
     </dl>
 </div>
-@*<div>
+
+
+@* Second tank to compare *@
+@* Still need to figure out the how to link a second, different tank. *@
+<div>
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Country)
@@ -183,8 +187,8 @@
             @Html.DisplayFor(model => model.ImgSrc)
         </dd>
     </dl>
-</div>*@
+</div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
     <a asp-action="Index">Back to List</a>
 </div>
