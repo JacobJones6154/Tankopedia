@@ -132,14 +132,14 @@
                     @Html.DisplayFor(modelItem => item.TurretArmor)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ImgSrc)
+                    <img src="@Html.DisplayFor(modelItem => item.ImgSrc)" alt="Alternate Text" />
                 </td>
-                <td>
-
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
-                </td>
+            <td>
+                               
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
+            </td>
             </tr>
         }
     </tbody>
