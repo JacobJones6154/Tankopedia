@@ -40,9 +40,12 @@
         <input type="submit" value="Search" />
     </p>
 </form>
-<table class="table">
+<table class="table" style="width:100%; height:100%">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tanks[0].ImgSrc)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tanks[0].Country)
             </th>
@@ -82,9 +85,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tanks[0].TurretArmor)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].ImgSrc)
-            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -92,6 +93,9 @@
         @foreach (var item in Model.Tanks)
         {
             <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.ImgSrc)" height="100" />
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Country)
                 </td>
@@ -130,10 +134,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TurretArmor)
-                </td>
-                <td>
-                    <img src="@Html.DisplayFor(modelItem => item.ImgSrc)" alt="Alternate Text" />
-                </td>
+                </td>                
             <td>
                                
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
