@@ -29,12 +29,12 @@
             <option value="">All Classes</option>
         </select>
 
-        
+
 
         @* Need to fix this query item.
-        <select asp-for="TankTier" asp-items="Model.Tier">
-            <option value="">All Tiers</option>
-        </select>*@
+            <select asp-for="TankTier" asp-items="Model.Tier">
+                <option value="">All Tiers</option>
+            </select>*@
 
         Tank Name: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Search" />
@@ -85,7 +85,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tanks[0].TurretArmor)
             </th>
-            
+
             <th></th>
         </tr>
     </thead>
@@ -134,13 +134,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TurretArmor)
-                </td>                
-            <td>
-                               
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
-            </td>
+                </td>
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
+                </td>
             </tr>
         }
     </tbody>

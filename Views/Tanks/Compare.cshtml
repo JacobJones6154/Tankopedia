@@ -1,193 +1,247 @@
-﻿@model Tankop.Models.Tanks
+﻿
 
-@{
-    ViewData["Title"] = "Compare Tanks";
-}
 
-<h1>Compare Tanks</h1>
 
-<div>
-    <h4>Tanks</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Country)
-        </dd>       
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Class)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Class)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tier)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tier)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TankName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TankName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HitPoints)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HitPoints)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ROF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ROF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AimTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AimTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Accuracy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Accuracy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgPenetration)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgPenetration)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgDamage)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgDamage)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Dpm)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dpm)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HullArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HullArmor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TurretArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TurretArmor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImgSrc)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.ImgSrc)" />
-        </dd>
-    </dl>
+<div class="Main">
+
+    <table width="1600" border="0" cellspacing="0" cellpadding="5">
+        <tbody>
+            <tr>
+                <!-- START MAIN SECTION -->
+                <td class="maintablesection" width="1265" align="justify">
+                    <h1 class="MainHeading">Compare Tanks</h1>
+                    <p>
+                        Compare up to 3 tanks.
+                    </p>
+                    <div id="">
+                        <table width="1265" border="1" cellspacing="0" cellpadding="5">
+                            <tbody>
+
+                                <tr>
+                                    <td colspan="2" align="left">
+                                        <b>Country</b>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" id="" style="color:Black;width:90%;">
+                                            <option value="">All Countries</option>
+                                        </select>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" id="" style="color:Black;width:90%;">
+                                            <option value="">All Countries</option>
+                                        </select>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" id="" style="color:Black;width:90%;">
+                                            <option value="">All Countries</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left">
+                                        <b>Class</b>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                    <td align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left">
+                                        <b>Tank</b>
+                                    </td>
+                                    <td width="300" align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                    <td width="300" align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                    <td width="300" align="center">
+                                        <select name="" style="color:Black;width:90%;">
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left">
+                                        <b>Tank Image</b>
+                                    </td>
+                                    <td width="300" align="center">
+                                    </td>
+                                    <td width="300" align="center">
+                                    </td>
+                                    <td width="300" align="center">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <b>Tier</b>
+                                    </td>
+                                    <td id="" width="300" height="20" align="center" class="ProfilerDefault">
+                                    </td>
+
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <b>Hit Points</b>
+                                    </td>
+                                    <td id="" width="300" height="20" align="center" class="ProfilerDefault">
+                                    </td>
+
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+
+                                </tr>
+
+
+
+
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Rate of Fire (rpm)</strong>
+                                    </td>
+                                    <td id="" width="300" height="20" align="center" class="ProfilerDefault">
+                                    </td>
+
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+                                    <td id="" width="300" height="20" align="center">
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Aim Time (seconds)</strong>
+                                    </td>
+                                    <td id="" height="20" align="center" class="ProfilerDefault">
+                                    </td>
+
+                                    <td id="" height="20" align="center">
+                                    </td>
+
+                                    <td id="" height="20" align="center">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Accuracy</strong>
+                                    </td>
+                                    <td id="" height="20" align="center" class="ProfilerDefault">
+                                    </td>
+
+                                    <td id="" height="20" align="center">
+                                    </td>
+
+                                    <td id="" height="20" align="center">
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Penetration</strong>
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Damage</strong>
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Damage Per Minute (DPM)</strong>
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20" colspan="2" align="left" class="style1">
+                                        <strong>Minimum DPM</strong>
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td height="20" colspan="2" align="left">
+                                        <b>Hull Armor (Front/Side/Rear)</b>
+                                    </td>
+                                    <td width="300" height="20" align="center">
+                                    </td>
+                                    <td width="300" height="20" align="center">
+                                    </td>
+                                    <td width="300" height="20" align="center">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20" colspan="2" align="left">
+                                        <strong>Turret Armor (Front/Side/Rear)</strong>
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                    <td height="20" align="center">
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
+<!-- END MAIN SECTION -->
 
-@* Second tank to compare *@
-@* Still need to figure out the how to link a second, different tank. *@
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Class)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Class)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tier)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tier)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TankName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TankName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HitPoints)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HitPoints)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ROF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ROF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AimTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AimTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Accuracy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Accuracy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgPenetration)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgPenetration)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgDamage)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgDamage)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Dpm)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dpm)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HullArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HullArmor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TurretArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TurretArmor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImgSrc)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.ImgSrc)" />
-        </dd>
-    </dl>
-</div>
 <div>
     @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
     <a asp-action="Index">Back to List</a>
