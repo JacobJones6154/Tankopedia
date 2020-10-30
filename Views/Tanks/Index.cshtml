@@ -16,6 +16,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -40,7 +48,7 @@
         <input type="submit" value="Search" />
     </p>
 </form>
-<table class="table" style="width:100%; height:100%">
+@*<table class="table" style="width:100%; height:100%">
     <thead>
         <tr>
             <th>
@@ -58,34 +66,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tanks[0].TankName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].HitPoints)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].ROF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].AimTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].Accuracy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].AvgPenetration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].AvgDamage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].Dpm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].HullArmor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tanks[0].TurretArmor)
-            </th>
-
             <th></th>
         </tr>
     </thead>
@@ -109,39 +89,35 @@
                     @Html.DisplayFor(modelItem => item.TankName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HitPoints)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ROF)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AimTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Accuracy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AvgPenetration)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AvgDamage)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dpm)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HullArmor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TurretArmor)
-                </td>
-                <td>
-
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>   |
                     <a asp-action="Compare" asp-route-id="@item.Id">Compare</a>
                 </td>
             </tr>
         }
     </tbody>
-</table>
+</table>*@
+
+
+    <div class="row text-center">
+        @foreach (var item in Model.Tanks)
+        {
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h2> @Html.DisplayFor(modelItem => item.TankName) </h2>
+                    </div>
+                    <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.ImgSrc)" alt="">
+                    <div class="card-body">
+                        <h5> Class: @Html.DisplayFor(modelItem => item.Class)</h5>
+                        <h5> Country: @Html.DisplayFor(modelItem => item.Country) </h5>
+                        <h5> Tier: @Html.DisplayFor(modelItem => item.Tier) </h5>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>

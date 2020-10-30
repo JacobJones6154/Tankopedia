@@ -4,88 +4,87 @@
     ViewData["Title"] = "Details";
 }
 
-
-
-    <h1>
-        @Html.DisplayFor(model => model.TankName)        
-    </h1>
-    <h1>
-        @Html.DisplayFor(model => model.Country)
-    </h1>
-    <h1>
-        @Html.DisplayFor(model => model.Class)
-    </h1>
     
-<img src="@Html.DisplayFor(model => model.ImgSrc)" />
-      
 
-<div>
-    <dl class="row">
-        
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tier)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tier)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HitPoints)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HitPoints)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ROF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ROF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AimTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AimTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Accuracy)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Accuracy)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgPenetration)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgPenetration)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AvgDamage)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AvgDamage)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Dpm)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dpm)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HullArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HullArmor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TurretArmor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TurretArmor)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        <h1>
+            @Html.DisplayFor(model => model.TankName)
+        </h1>
+        <h1>
+            @Html.DisplayFor(model => model.Country)
+        </h1>
+        <h1>
+            @Html.DisplayFor(model => model.Class)
+        </h1>
 
+        <img src="@Html.DisplayFor(model => model.ImgSrc)" />
+
+
+        <div>
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Tier)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Tier)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.HitPoints)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.HitPoints)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ROF)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ROF)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.AimTime)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.AimTime)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Accuracy)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Accuracy)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.AvgPenetration)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.AvgPenetration)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.AvgDamage)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.AvgDamage)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Dpm)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Dpm)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.HullArmor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.HullArmor)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TurretArmor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TurretArmor)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>  
